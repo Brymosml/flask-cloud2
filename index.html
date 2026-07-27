@@ -1,12 +1,26 @@
-<script>
-async function callAPI() {
-  try {
-    const response = await fetch("https://4iu15spmsj.execute-api.eu-north-1.amazonaws.com/hello");
-    const data = await response.text();
-    document.getElementById("result").innerText = data;
-  } catch (error) {
-    console.log(error);
-    document.getElementById("result").innerText = "Error calling API";
-  }
-}
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My AWS App</title>
+</head>
+<body>
+    <h1>Hello AWS!</h1>
+
+    <button onclick="callAPI()">Call API</button>
+
+    <p id="result">Waiting for response...</p>
+
+    <script>
+    async function callAPI() {
+        try {
+            const response = await fetch("https://4iu15spmsj.execute-api.eu-north-1.amazonaws.com/hello");
+            const data = await response.text();
+            document.getElementById("result").innerText = data;
+        } catch (error) {
+            console.log(error);
+            document.getElementById("result").innerText = "Error calling API";
+        }
+    }
+    </script>
+</body>
+</html>
